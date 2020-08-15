@@ -93,7 +93,7 @@ namespace AvaloniaUI.Ribbon
                     SetupSide("BottomLeft", StandardCursorType.BottomLeftCorner, WindowEdge.SouthWest, ref e);
                     SetupSide("BottomRight", StandardCursorType.BottomRightCorner, WindowEdge.SouthEast, ref e);
                 }
-                catch (Exception x)
+                catch (Exception)
                 {
 
                 }
@@ -111,7 +111,7 @@ namespace AvaloniaUI.Ribbon
                     window.Close();
                 };
             }
-            catch (KeyNotFoundException ex)
+            catch (KeyNotFoundException)
             {
 
             }
@@ -132,7 +132,7 @@ namespace AvaloniaUI.Ribbon
                 {
                     return new Bitmap(stream);
                 }
-                catch (ArgumentNullException ex)
+                catch (ArgumentNullException)
                 {
                     try
                     {
@@ -142,7 +142,7 @@ namespace AvaloniaUI.Ribbon
                         bmp.Save(stream, ImageFormat.Png);
                         return new Bitmap(stream);
                     }
-                    catch (ArgumentException e)
+                    catch (ArgumentException)
                     {
                         Icon icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetEntryAssembly().Location);
                         System.Drawing.Bitmap bmp = icon.ToBitmap();
